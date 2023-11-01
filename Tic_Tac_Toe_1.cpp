@@ -44,7 +44,7 @@ void get_data()
         case 8 : row=2; col=1; break;
         case 9 : row=2; col=2; break;
         default:
-        cout<<"Enter a Valid Position!";
+        cout<<"Invalid!";
     }
 
     if(turn=='x' && board[row][col]!='x' && board[row][col]!='o')
