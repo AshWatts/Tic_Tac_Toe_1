@@ -24,13 +24,13 @@ void get_data()
     if(turn=='x')
     {
         cout<<"Player 1 turn : ";
+        cin>>choice;
     }
     else if(turn=='o')
     {
         cout<<"Player 2 turn : ";
+        cin>>choice;
     }
-
-    cin>>choice;
 
     switch(choice)
     {
@@ -57,12 +57,6 @@ void get_data()
     {
         board[row][col]='o';
         turn='x';
-    }
-
-    else
-    {
-        cout<<"Box Already Filled!\n";
-        get_data();
     }
 }
 
