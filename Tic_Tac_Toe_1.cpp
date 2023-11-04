@@ -44,7 +44,7 @@ void get_data()
         case 8 : row=2; col=1; break;
         case 9 : row=2; col=2; break;
         default:
-        cout<<"Invalid!";
+        cout<<"Invalid Move!";
     }
 
     if(turn=='x' && board[row][col]!='x' && board[row][col]!='o')
@@ -74,6 +74,8 @@ int main()
     cout<<"TIC TAC TOE GAME : \n\n";
     cout<<"Player 1 - [x]\t\t";
     cout<<"Player 2 - [o]\n\n";
+
+    cout<<"DED.";
 
     while(game_over())
     {
