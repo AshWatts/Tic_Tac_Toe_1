@@ -64,7 +64,45 @@ void get_data()
 
 bool game_over()
 {
-    
+    if(board[0][0] && board[0][1] && board[0][2])
+    {
+        return 1;
+    }   
+
+    else if(board[1][0] && board[1][1] && board[1][2])
+    {
+        return 1;       
+    }   
+
+    else if(board[2][0] && board[2][1] && board[2][2])
+    {
+        return 1;        
+    }   
+
+    else if(board[0][0] && board[1][0] && board[2][0])
+    {
+        return 1;        
+    }   
+
+    else if(board[0][1] && board[1][1] && board[2][1])
+    {
+        return 1;        
+    }   
+
+    else if(board[0][2] && board[1][2] && board[2][2])
+    {
+        return 1;        
+    } 
+
+    else if(board[0][0] && board[1][1] && board[2][2])
+    {
+        return 1;    
+    } 
+
+    else if(board[0][2] && board[1][1] && board[2][0])
+    {
+        return 1;
+    } 
 }
 
 
@@ -74,8 +112,6 @@ int main()
     cout<<"TIC TAC TOE GAME : \n\n";
     cout<<"Player 1 - [x]\t\t";
     cout<<"Player 2 - [o]\n\n";
-
-    cout<<"DED.";
 
     while(game_over())
     {
