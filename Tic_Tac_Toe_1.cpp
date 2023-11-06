@@ -44,7 +44,8 @@ void get_data()
         case 8 : row=2; col=1; break;
         case 9 : row=2; col=2; break;
         default:
-        cout<<"Invalid Move!";
+        cout<<"Invalid Move!\n";
+        break;
     }
 
     if(turn=='x' && board[row][col]!='x' && board[row][col]!='o')
@@ -53,10 +54,16 @@ void get_data()
         turn='o';
     }
 
-    if(turn=='o' && board[row][col]!='x' && board[row][col]!='o')
+    else if(turn=='o' && board[row][col]!='x' && board[row][col]!='o')
     {
         board[row][col]='o';
         turn='x';
+    }
+
+    else
+    {
+        cout<<"Choose an Empty Space!\n";
+        get_data();
     }
 }
 
@@ -64,45 +71,28 @@ void get_data()
 
 bool game_over()
 {
-    if(board[0][0] && board[0][1] && board[0][2])
+	for(int i=0;i<3;i++)
+	{
+	if(board[i][0] == board[i][1] && board[i][0] == board[i][2] || board[0][i] == board[1][i] && board[0][i] == board[2][i] )
+		return false;
+		   
+	if(board[0][0] == board[1][1] && board[0][0] == board[2][2] || board[0][2] == board[1][1] && board[2][0] == board[0][2])
+		return false;	
+	}
+	   
+	for(int i=0;i<3;i++)
     {
-        return 1;
-    }   
-
-    else if(board[1][0] && board[1][1] && board[1][2])
-    {
-        return 1;       
-    }   
-
-    else if(board[2][0] && board[2][1] && board[2][2])
-    {
-        return 1;        
-    }   
-
-    else if(board[0][0] && board[1][0] && board[2][0])
-    {
-        return 1;        
-    }   
-
-    else if(board[0][1] && board[1][1] && board[2][1])
-    {
-        return 1;        
-    }   
-
-    else if(board[0][2] && board[1][2] && board[2][2])
-    {
-        return 1;        
-    } 
-
-    else if(board[0][0] && board[1][1] && board[2][2])
-    {
-        return 1;    
-    } 
-
-    else if(board[0][2] && board[1][1] && board[2][0])
-    {
-        return 1;
-    } 
+	   	for(int j=0;j<3;j++)
+        {
+	   	if(board[i][j] !='X' && board[i][j] !='O')
+		    return true;
+        }
+    }	
+		   
+		   
+	state = true;
+	return false;
+		
 }
 
 
@@ -118,5 +108,17 @@ int main()
         display_data();
         get_data();
         game_over();
+    }
+    if(turn=='x' && state == false)
+    {
+        cout<<"Player 2 Wins!";
+    }
+    else if(turn == 'o' && state == false)
+    {
+        cout<<"Player 1 Wins!";
+    }
+    else
+    {
+        cout<<"It's a Draw!";
     }
 }
