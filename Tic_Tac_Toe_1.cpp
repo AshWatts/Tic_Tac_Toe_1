@@ -62,7 +62,7 @@ void get_data()
 
     else
     {
-        cout<<"Choose an Empty Space!\n";
+        cout<<"Choose any other space which is Empty!\n";
         get_data();
     }
 }
