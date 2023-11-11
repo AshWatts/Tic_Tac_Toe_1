@@ -62,7 +62,7 @@ void get_data()
 
     else
     {
-        cout<<"Choose an empty space!\n";
+        cout<<"Choose a space that is Empty!\n";
         get_data();
     }
 }
@@ -71,7 +71,7 @@ void get_data()
 
 bool game_over()
 {
-	for(int i=0;i<3;i++)
+	for(int i=0;i<3;i++) 
 	{
 	if(board[i][0] == board[i][1] && board[i][0] == board[i][2] || board[0][i] == board[1][i] && board[0][i] == board[2][i] )
 		return false;
